@@ -9,6 +9,7 @@ public class HelloWorldRestController {
     //Se crea un endpoint, hay 3 rutas distintas que devolveria lo mismo
     @GetMapping({"/hello", "/hw", "/hola"})
     public String helloWorld(){
+        System.out.println("Solicitud ejecutada!");
         return "Hello World!";
     }
 }
