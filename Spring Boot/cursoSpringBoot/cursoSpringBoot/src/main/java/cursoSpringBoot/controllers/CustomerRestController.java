@@ -2,6 +2,7 @@ package cursoSpringBoot.controllers;
 
 import cursoSpringBoot.model.Customer;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -17,8 +18,20 @@ public class CustomerRestController {
             new Customer(234, "Yasser Massimo", "yasser", "246")
     ));
 
+    //Endpoint de lista de clientes
     @GetMapping("clientes")
     public List<Customer> getCustomers(){
         return customers;
+    }
+
+    //Endpoint de un cliente en especifico
+    @GetMapping("clientes/{username}")
+    public Customer getCustomer(@PathVariable String username){
+        for(Customer c: customers){
+            if (c.getUsername().equalsIgnoreCase(username))
+                return c;
+        }
+        return null;
+        //Solo para devolver algo, no es buena practica por ahora. Mas adelante se hara manejo de excepciones.
     }
 }
