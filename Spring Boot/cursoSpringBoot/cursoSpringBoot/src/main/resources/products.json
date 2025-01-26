@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Martillo1",
+    "price": 25.5,
+    "stock": 100
+  },
+  {
+    "id": 2,
+    "name": "Destornillador1",
+    "price": 15.75,
+    "stock": 150
+  },
+  {
+    "id": 3,
+    "name": "Taladro1",
+    "price": 120.99,
+    "stock": 50
+  },
+  {
+    "id": 4,
+    "name": "Llave Inglesa1",
+    "price": 45.3,
+    "stock": 75
+  }
+]
