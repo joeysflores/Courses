@@ -1,5 +1,6 @@
 package cursoSpringBoot.controllers;
 
+import cursoSpringBoot.configurations.ExternalizedConfigurations;
 import cursoSpringBoot.model.Product;
 import cursoSpringBoot.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +27,13 @@ public class ProductRestController {
     @Lazy
     private ProductService productService;
 
+    @Autowired
+    private ExternalizedConfigurations externalizedConfigurations;
+
     @GetMapping
     public ResponseEntity<?> getProducts(){
+        System.out.println(externalizedConfigurations.toString());
+
         List<Product> products = productService.getProducts();
         return ResponseEntity.ok(products);
     }

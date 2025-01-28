@@ -60,6 +60,6 @@ public class ExternalizedConfigurations {
                 "nombre=" + this.getName() + "\n" +
                 "pais=" + this.getCountry() + "\n" +
                 "autor=" + this.getAutor() + "\n" +
-                "idioma=" + this.getCountry() + "\n";
+                "idioma=" + this.getLanguage() + "\n";
     }
 }
