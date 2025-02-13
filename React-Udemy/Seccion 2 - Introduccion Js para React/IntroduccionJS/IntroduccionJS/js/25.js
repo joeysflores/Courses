@@ -1,6 +1,6 @@
 //Fetch API con promises
 //Promise es como un objeto que va estar disponible a futuro
-const url = "https://jsonplaceholder.typicode.com/comments1"
+const url = "https://jsonplaceholder.typicode.com/posts/1/comments"
 
 /**
  * Lo que va hacer fetch es que primero queremos una respuesta, en caso se obtenga obtenemos los datos,
@@ -22,3 +22,21 @@ fetch(url)
   .catch(error => {
     console.log(error.message)
   })
+
+
+  /*Usos de fetch con metodos HTTP*/
+  //POST
+  fetch(url,{
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      title: 'Mi nuevo post',
+      body: 'Este es el contenido del post',
+      userId: 1
+    })
+  })
+  .then(response => response.json()) 
+  .then(data => console.log('Post creado:', data))
+  .catch(error => console.error('Error en la petición:', error));
