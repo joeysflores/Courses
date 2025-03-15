@@ -1,5 +1,25 @@
+import type { CarItem, Guitar } from "../types"
+
+type HeaderProps = {
+    cart : CarItem[]
+    removeFromCart : (id: Guitar['id']) => void   //Funcion que no retorna nada
+    increaseQuantity : (id: Guitar['id']) => void
+    decreaseQuantity : (id: Guitar['id']) => void
+    clearCart: () => void
+    isEmpty: boolean
+    cartTotal: number
+}
+
 //Es necesario desestructurar el array
-function Header({cart, removeFromCart, increaseQuantity, decreaseQuantity, clearCart, isEmpty, cartTotal}){
+function Header({
+                cart, 
+                removeFromCart, 
+                increaseQuantity, 
+                decreaseQuantity, 
+                clearCart, 
+                isEmpty, 
+                cartTotal
+                } : HeaderProps){
   
   return (
     <header className="py-5 header">
